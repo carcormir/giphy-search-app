@@ -5,7 +5,7 @@ export default function useIsAtTarget ({ targetRef, once = true, distance = '0px
   const myRef = useRef()
 
   useEffect(() => {
-    let observer = null
+    let observer
 
     const element = targetRef ? targetRef.current : myRef.current
 
@@ -13,7 +13,6 @@ export default function useIsAtTarget ({ targetRef, once = true, distance = '0px
       const element = entries[0]
       if (element.isIntersecting) {
         setIsAtTarget(true)
-        console.log('hereee')
         once && observer.disconnect() // only disconnect after the first time, so it doesnt get trigger all the time
       } else {
         !once && setIsAtTarget(false)

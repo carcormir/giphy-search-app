@@ -1,6 +1,10 @@
 import { API_URL, API_KEY } from '../settings'
 
-export default function getGifs ({ keyword, limit, page }) {
+export default function getGifs ({
+  keyword = 'morty',
+  limit = 5,
+  page = 0
+}) {
   const SEARCH_URL = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=${page * limit}`
   return fetch(SEARCH_URL)
     .then(res => res.json())

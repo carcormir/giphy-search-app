@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
+import React from 'react'
 
-export default function Gif ({ title, id, url }) {
+function Gif ({ title, id, url } = {}) {
   return (
     <div className='gif' key={id}>
       <Link to={`/gif/${id}`} className='gif-link'>
@@ -10,3 +11,5 @@ export default function Gif ({ title, id, url }) {
     </div>
   )
 }
+
+export default React.memo(Gif)

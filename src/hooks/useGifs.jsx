@@ -4,7 +4,8 @@ import getGifs from '../services/getGifsService'
 const INITIAL_PAGE_VALUE = 0
 export default function useGifs ({ keyword, limit }) {
   const [gifs, setGifs] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
+  const [loadingNextPage, setLoadingNextPage] = useState(false)
   const [page, setPage] = useState(INITIAL_PAGE_VALUE)
 
   useEffect(() => {
@@ -14,18 +15,18 @@ export default function useGifs ({ keyword, limit }) {
         setGifs(gifs)
         setLoading(false)
       })
-  }, [keyword])
+  }, [keyword, setGifs])
 
   useEffect(() => {
     if (page === INITIAL_PAGE_VALUE) return
 
-    setLoading(true)
+    setLoadingNextPage(true)
     getGifs({ keyword, limit, page })
       .then(nextGifs => {
         setGifs(prevGifs => prevGifs.concat(nextGifs))
-        setLoading(false)
+        setLoadingNextPage(false)
       })
-  }, [page])
+  }, [page, keyword, setGifs])
 
-  return { gifs, loading, setPage }
+  return { gifs, loadingNextPage, loading, setPage }
 }
