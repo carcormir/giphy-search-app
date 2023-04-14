@@ -18,7 +18,7 @@ export default function Search () {
   const { isAtTarget } = useIsAtTarget({
     targetRef: loading ? null : targetRef,
     once: false,
-    distance: '200px'
+    distance: '10px'
   })
 
   const handleNextPageDebounce = useCallback(debounce(
