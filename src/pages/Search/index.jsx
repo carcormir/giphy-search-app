@@ -8,11 +8,13 @@ import useIsAtTarget from '../../hooks/useIsAtTarget'
 import useGifs from '../../hooks/useGifs'
 import debounce from 'just-debounce-it'
 
+import './styles.css'
+
 export default function Search () {
   const limit = 2
   const { keyword } = useParams()
   const targetRef = useRef()
-  const { gifs, loading, setPage } = useGifs({ keyword, limit })
+  const { gifs, loading, setPage, loadingNextPage } = useGifs({ keyword, limit })
   const { isAtTarget } = useIsAtTarget({
     targetRef: loading ? null : targetRef,
     once: false,
@@ -20,7 +22,7 @@ export default function Search () {
   })
 
   const handleNextPageDebounce = useCallback(debounce(
-    () => setPage(prevPage => prevPage + 1), 200), [setPage])
+    () => setPage(prevPage => prevPage + 1), 150), [setPage])
 
   useEffect(() => {
     if (isAtTarget) handleNextPageDebounce()
@@ -34,8 +36,9 @@ export default function Search () {
         // eslint-disable-next-line operator-linebreak
         :
         <>
-          <h3>This is your search results for {keyword} gifs ...</h3>
+          <h3 className='search-title'>This is your search results for {keyword} gifs ...</h3>
           <ListOfGifs gifs={gifs} />
+          {loadingNextPage && <Loader position='bottom' />}
           <div id='watcher' ref={targetRef} />
         </>}
     </>

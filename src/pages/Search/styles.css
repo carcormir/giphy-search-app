@@ -1,0 +1,7 @@
+.search-title {
+  display: flex;
+  font-size: 1.3rem;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+}

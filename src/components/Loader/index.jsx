@@ -1,8 +1,10 @@
 import './styles.css'
 
-export default function Loader () {
+export default function Loader ({ position }) {
+  const classType = `lds-ring ${position}`
+  console.log(classType)
   return (
-    <div className='lds-ring'>
+    <div className={classType}>
       <div />
       <div />
       <div />

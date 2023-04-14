@@ -1,11 +1,11 @@
 .list-of-gifs {
   display: grid;
   width: 100%;
-  min-height: 100vh;
+  margin-top: 100px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0 16px;
-  /* remove vertical gap */
+  gap: 0 15px;
   align-items: center;
+  margin: 100px 0px;
 }
 
 .gif {
