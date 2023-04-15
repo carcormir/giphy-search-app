@@ -13,13 +13,14 @@ export default function SearchForm () {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    navigate(`/search/${keyword}`)
+    if (keyword !== '') {
+      navigate(`/search/${keyword}`)
+    }
   }
 
   const handleChange = (event) => {
     const newKeyword = event.target.value
     setKeyword(newKeyword)
-    console.log(newKeyword)
   }
 
   return (

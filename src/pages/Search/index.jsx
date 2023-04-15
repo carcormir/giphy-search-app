@@ -1,16 +1,16 @@
+import React, { useRef, useCallback, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import SearchForm from '../../components/SearchForm'
 import ListOfGifs from '../../components/ListOfGifs'
 import Loader from '../../components/Loader'
 
-import { useRef, useCallback, useEffect } from 'react'
 import useIsAtTarget from '../../hooks/useIsAtTarget'
 import useGifs from '../../hooks/useGifs'
 import debounce from 'just-debounce-it'
 
 import './styles.css'
 
-export default function Search () {
+function Search () {
   const limit = 2
   const { keyword } = useParams()
   const targetRef = useRef()
@@ -44,3 +44,5 @@ export default function Search () {
     </>
   )
 }
+
+export default React.memo(Search)
