@@ -8,8 +8,6 @@ import useIsAtTarget from '../../hooks/useIsAtTarget'
 import useGifs from '../../hooks/useGifs'
 import debounce from 'just-debounce-it'
 
-import './styles.css'
-
 function Search () {
   const limit = 2
   const { keyword } = useParams()

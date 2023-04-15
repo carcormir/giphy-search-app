@@ -1,0 +1,5 @@
+- Dont navigate to the detail page if you are already there
+- Edge cases for service requests. Raise and catch errors.
+- Emulate Giphy layout
+  - Sidebar with trends and prev searchs
+  - Header bar with search bar 
