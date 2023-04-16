@@ -13,7 +13,7 @@ export default function getGifById ({
     .then(resJson => {
       const { data } = resJson
       const { images, title, id } = data
-      const { url } = images.downsized_medium?.url || ''
+      const url = images.downsized_medium?.url || ''
       return { title, id, url }
     })
     .catch(err => {
