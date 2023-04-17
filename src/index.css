@@ -6,6 +6,8 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  background-color: lightcoral;
+
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -31,9 +33,9 @@ a:hover {
 
 body {
   display: flex;
-  margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  align-items: center;
   justify-content: center;
 }
 
@@ -82,6 +84,9 @@ button:focus-visible {
 
 .search-title {
   display: flex;
+  flex-wrap: wrap;
+  margin-left: 70px;
+  margin-right: 70px;
   font-size: 1.3rem;
   margin-top: 80px;
   justify-content: center;

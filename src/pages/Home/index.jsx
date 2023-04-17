@@ -10,7 +10,7 @@ import useIsAtTarget from '../../hooks/useIsAtTarget'
 
 export default function Home () {
   const targetRef = useRef()
-  const limit = 5
+  const limit = 10
   const { gifs, loading, setPage, loadingNextPage } = useTrendingGifs({ limit })
   const { isAtTarget } = useIsAtTarget({
     targetRef: loading ? null : targetRef,
