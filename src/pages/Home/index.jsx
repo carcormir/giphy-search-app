@@ -1,7 +1,7 @@
 import { useRef, useCallback, useEffect } from 'react'
 import debounce from 'just-debounce-it'
 
-import SearchForm from '../../components/SearchForm'
+import HeaderBar from '../../components/HeaderBar'
 import Loader from '../../components/Loader'
 import ListOfGifs from '../../components/ListOfGifs'
 
@@ -27,7 +27,7 @@ export default function Home () {
 
   return (
     <>
-      <SearchForm />
+      <HeaderBar />
       <h3 className='search-title'>Trending gifs ...</h3>
       {loading
         ? <Loader />
