@@ -1,3 +1,10 @@
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 .search {
   display: flex;
   text-align: center;
@@ -12,7 +19,6 @@
 .search-options {
   font-size: 14px;
   display: flex;
-  margin-top: 10px;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -22,4 +28,10 @@
 .search-options select {
   padding: 5px 10px;
   width: 76px;
+}
+
+@media screen and (max-width: 880px) {
+  .search-form {
+    flex-direction: column;
+  }
 }

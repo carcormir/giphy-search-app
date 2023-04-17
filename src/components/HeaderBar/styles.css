@@ -1,0 +1,20 @@
+.search-bar-wrapper {
+  display: flex;
+  background-color: lightcoral;
+  border: 2px solid green;
+  position: fixed;
+  top: 50px;
+  z-index: 1000;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+@media screen and (max-width: 880px) {
+  .search-bar-wrapper {
+    flex-direction: column;
+    gap: 0px;
+    padding-bottom: 10px;
+  }
+}
