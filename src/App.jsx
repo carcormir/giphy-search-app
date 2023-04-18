@@ -9,9 +9,6 @@ function App () {
   return (
     <BrowserRouter>
       <div className='App'>
-        <Link to='/'>
-          <h1 className='main-title'>Giphy Search App</h1>
-        </Link>
         <Routes>
           <Route
             path='/'

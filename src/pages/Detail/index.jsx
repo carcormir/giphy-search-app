@@ -1,8 +1,8 @@
 import { useParams, Navigate } from 'react-router-dom'
-import SearchForm from '../../components/SearchForm'
 import Loader from '../../components/Loader'
 import Gif from '../../components/Gif'
 import useOneGif from '../../hooks/useOneGif'
+import HeaderBar from '../../components/HeaderBar'
 
 export default function Detail () {
   const { id } = useParams()
@@ -11,7 +11,7 @@ export default function Detail () {
   if (error) return <Navigate to='/404' />
   return (
     <>
-      <SearchForm />
+      <HeaderBar />
       {loading
         ? <Loader />
         // eslint-disable-next-line operator-linebreak

@@ -7,9 +7,10 @@ import Loader from '../../components/Loader'
 import useIsAtTarget from '../../hooks/useIsAtTarget'
 import useGifs from '../../hooks/useGifs'
 import debounce from 'just-debounce-it'
+import HeaderBar from '../../components/HeaderBar'
 
 function Search () {
-  const limit = 2
+  const limit = 10
   const { keyword } = useParams()
   const targetRef = useRef()
   const { gifs, loading, setPage, loadingNextPage } = useGifs({ keyword, limit })
@@ -28,7 +29,7 @@ function Search () {
 
   return (
     <>
-      <SearchForm />
+      <HeaderBar />
       {loading
         ? <Loader />
         // eslint-disable-next-line operator-linebreak

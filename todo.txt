@@ -1,5 +1,6 @@
 [X] Dont navigate to the detail page if you are already there
 [X] Edge cases for service requests. Raise and catch errors.
+[X] Trending gifs on Home page
 [] Emulate Giphy layout
   [] Sidebar with trends and prev searchs
-  [] Header bar with search bar 
+  [X] Header bar with search bar 

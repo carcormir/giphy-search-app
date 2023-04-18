@@ -44,7 +44,7 @@ export default function SearchForm () {
                 <option key={rating}>{rating}</option>
               )
             })
-          }
+            }
         </select>
         <label>Limit</label>
         <select name='limit' id={limitId}>
@@ -55,7 +55,7 @@ export default function SearchForm () {
                 <option key={limit}>{limit}</option>
               )
             })
-          }
+            }
         </select>
       </div>
     </form>
