@@ -81,6 +81,25 @@ button:focus-visible {
   font-size: 1.6rem;
 }
 
+.scaleme {
+  animation: scaleme 0.5s infinite alternate;
+  animation-iteration-count: 2
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+@keyframes scaleme {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+    text-shadow: 0px 4px 4px hsl(0 0% 0%/0.5);
+  }
+}
 
 .search-title {
   display: flex;
@@ -89,6 +108,21 @@ button:focus-visible {
   margin-right: 70px;
   font-size: 1.3rem;
   margin-top: 150px;
+  margin-bottom: -50px;
   justify-content: center;
   align-items: center;
+}
+
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: -20px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 880px) {
+  .search-wrapper {
+    margin-top: 60px;
+  }
 }
