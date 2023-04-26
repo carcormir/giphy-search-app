@@ -28,16 +28,16 @@ export default function Home () {
   return (
     <>
       <HeaderBar />
-      <h3 className='search-title'>Trending gifs ...</h3>
       {loading
         ? <Loader />
         // eslint-disable-next-line operator-linebreak
         :
-        <>
+        <div className='search-wrapper'>
+          <h3 className='search-title'>Trending gifs ...</h3>
           <ListOfGifs gifs={gifs} />
           {loadingNextPage && <Loader position='bottom' />}
           <div id='watcher' ref={targetRef} />
-        </>}
+        </div>}
     </>
   )
 }

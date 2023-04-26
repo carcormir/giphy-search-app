@@ -34,12 +34,12 @@ function Search () {
         ? <Loader />
         // eslint-disable-next-line operator-linebreak
         :
-        <>
+        <div className='search-wrapper'>
           <h3 className='search-title'>This is your search results for {keyword} gifs ...</h3>
           <ListOfGifs gifs={gifs} />
           {loadingNextPage && <Loader position='bottom' />}
           <div id='watcher' ref={targetRef} />
-        </>}
+        </div>}
     </>
   )
 }
